@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class ItemsListComponent implements OnInit {
+  public items = [{ _id: 'asdfa', description: 'hola' }];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

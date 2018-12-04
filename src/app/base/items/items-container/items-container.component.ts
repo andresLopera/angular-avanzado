@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { ItemsApiService } from '../../core/items-api.service';
+import { ItemsApiService } from '../../../core/items-api.service';
 
 @Component({
   selector: 'app-items-container',

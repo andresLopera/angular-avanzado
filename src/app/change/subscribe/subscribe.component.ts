@@ -1,5 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ItemsApiService } from '../../items/items-api.service';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit
+} from '@angular/core';
+import { ItemsApiService } from '../../core/items-api.service';
 
 @Component({
   selector: 'app-subscribe',
@@ -9,7 +14,10 @@ import { ItemsApiService } from '../../items/items-api.service';
 })
 export class SubscribeComponent implements OnInit {
   public items: any[];
-  constructor(private itemsApiService: ItemsApiService, private cdr: ChangeDetectorRef) {}
+  constructor(
+    private itemsApiService: ItemsApiService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.itemsApiService.getAll().subscribe(data => {

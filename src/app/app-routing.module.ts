@@ -12,7 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'items',
-    loadChildren: './items/items.module#ItemsModule'
+    loadChildren: './base/items/items.module#ItemsModule'
+  },
+  {
+    path: 'change',
+    loadChildren: './change/change.module#ChangeModule'
   }
 ];
 

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ItemsApiService } from '../../items/items-api.service';
+import { ItemsApiService } from '../../core/items-api.service';
 
 @Component({
   selector: 'app-async',

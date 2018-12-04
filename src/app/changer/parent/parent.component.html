@@ -1,0 +1,19 @@
+<h3>parent works!</h3>
+<div>
+  counter:
+  <span> {{ counter }} </span>
+</div>
+<div>
+  item:
+  <span> {{ item | json }} </span>
+</div>
+<div>
+  <button (click)="onClick()">Change</button>
+</div>
+<h4>child item</h4>
+<app-child [item]="item"></app-child>
+<h4>child counter</h4>
+<app-child [counter]="counter"></app-child>
+<h4>child counter item</h4>
+<app-child [counter]="counter"
+           [item]="item"></app-child>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-item-view',
@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styles: []
 })
 export class ItemViewComponent implements OnInit {
-  @Input() item: any = 'test';
+  @Input() item: any;
+  @Output() public delete = new EventEmitter<any>();
   constructor() {}
 
   ngOnInit() {}

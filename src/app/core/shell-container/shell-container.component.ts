@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { GlobalService } from '../global.service';
 
 @Component({
@@ -7,12 +8,11 @@ import { GlobalService } from '../global.service';
   styles: []
 })
 export class ShellContainerComponent implements OnInit {
-  public message = 'Angular Blocks';
-  public message$;
+  public message$: Observable<string>;
   constructor(private globalService: GlobalService) {}
 
   ngOnInit() {
     this.globalService.setMessage('Initializing...');
-    this.message$ = this.globalService.getMessage$();
+    this.message$ = this.globalService.getMessage$().pipe();
   }
 }

@@ -17,5 +17,8 @@ export class GlobalService {
   public setMessage(message) {
     this.message = message;
     this.message$.next(message);
+    setTimeout(() => {
+      this.message$.next('');
+    }, 3000);
   }
 }

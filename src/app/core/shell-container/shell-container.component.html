@@ -1,4 +1,6 @@
 <app-shell-header></app-shell-header>
 <app-shell-main></app-shell-main>
 <app-shell-footer></app-shell-footer>
-<span class="toast "><mark class="tag">{{ message$ | async }}</mark></span>
+<ng-container *ngIf="message$ | async as message">
+  <span class="toast "><mark class="tag">{{ message }}</mark></span>
+</ng-container>

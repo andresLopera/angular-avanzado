@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'change',
     loadChildren: './change/change.module#ChangeModule'
+  },
+  {
+    path: 'contacts',
+    loadChildren: './reactive/contacts/contacts.module#ContactsModule'
   }
 ];
 

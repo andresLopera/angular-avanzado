@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+  <fieldset>
+    <legend>New Contact</legend>
+    <div>
+      <label for="name">Name</label>
+      <input type="text"
+             formControlName="name"
+             placeholder="Full Name" />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email"
+             formControlName="email"
+             placeholder="Email address" />
+    </div>
+  </fieldset>
+  <button type="submit"
+          [disabled]="form.invalid"
+          (click)="save.next(form.value)">
+    <span class="icon-upload"></span>
+    <span>Save</span>
+  </button>
+</form>

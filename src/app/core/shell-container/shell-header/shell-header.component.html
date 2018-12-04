@@ -1,16 +1,13 @@
 <header class="sticky">
   <a [routerLink]="['/']"
      class="logo"><span class="icon-home"></span>{{ title }}</a>
-  <a [routerLink]="['../items']"
+  <a [routerLink]="['/items']"
      routerLinkActive="router-link-active"
      class="button">Items CRUD</a>
-  <a [routerLink]="['.']"
+  <a [routerLink]="['/contacts']"
      routerLinkActive="router-link-active"
      class="button">Reactive Forms</a>
   <a [routerLink]="['/change']"
      routerLinkActive="router-link-active"
      class="button">Change Detection</a>
-  <a [routerLink]="['/about']"
-     routerLinkActive="router-link-active"
-     class="button">About</a>
 </header>

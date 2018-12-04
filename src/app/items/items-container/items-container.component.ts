@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { ItemsApiService } from '../../core/items-api.service';
 
 @Component({
   selector: 'app-items-container',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class ItemsContainerComponent implements OnInit {
+  public items$: Observable<any[]>;
+  constructor(private itemsApiService: ItemsApiService) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  public ngOnInit() {
+    this.items$ = this.itemsApiService.getAll();
   }
 
+  public onSave(newItem) {
+    this.items$ = this.itemsApiService
+      .post(newItem)
+      .pipe(switchMap(() => this.itemsApiService.getAll()));
+  }
 }

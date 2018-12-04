@@ -1,3 +1,6 @@
-<p>
-  about-container works!
-</p>
+<header>
+  <a *ngFor="let link of links"
+     [routerLink]="link.routerLink"
+     class="button">{{ link.caption }}</a>
+</header>
+<router-outlet></router-outlet>

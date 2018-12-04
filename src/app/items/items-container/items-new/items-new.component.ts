@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-items-new',
@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class ItemsNewComponent implements OnInit {
+  @Output() public save = new EventEmitter<any>();
+  public item = { description: '' };
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

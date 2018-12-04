@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-items-list',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class ItemsListComponent implements OnInit {
-  public items = [{ _id: 'asdfa', description: 'hola' }];
+  @Input() public items: any[];
   constructor() {}
 
   ngOnInit() {}

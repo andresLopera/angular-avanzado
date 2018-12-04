@@ -5,10 +5,6 @@ import { ItemContainerComponent } from './item-container/item-container.componen
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'items'
-  },
-  {
-    path: ':id',
     component: ItemContainerComponent
   }
 ];

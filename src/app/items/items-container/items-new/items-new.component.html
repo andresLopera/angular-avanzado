@@ -4,8 +4,13 @@
 <form>
   <fieldset>
     <label>Description</label>
-    <input type="text">
+    <input name="description"
+           [(ngModel)]="item.description"
+           type="text">
   </fieldset>
-  <input type="submit"
-         value="Save">
+  <button (click)="save.next(item)"
+          type="submit">
+    <span class="icon-upload"></span>
+    <span>Save</span>
+  </button>
 </form>

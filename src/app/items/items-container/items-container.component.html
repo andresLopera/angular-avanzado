@@ -1,2 +1,2 @@
-<app-items-new></app-items-new>
-<app-items-list></app-items-list>
+<app-items-new (save)="onSave($event)"></app-items-new>
+<app-items-list [items]="items$ | async"></app-items-list>

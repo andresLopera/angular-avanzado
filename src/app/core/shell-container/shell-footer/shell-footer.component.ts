@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-shell-footer',
@@ -6,7 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styles: []
 })
 export class ShellFooterComponent implements OnInit {
-  @Input() public message: string;
   constructor() {}
 
   ngOnInit() {}

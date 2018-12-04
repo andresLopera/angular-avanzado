@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class AboutContainerComponent implements OnInit {
+  public links = [
+    {
+      routerLink: './links',
+      caption: 'Links'
+    },
+    {
+      routerLink: './info',
+      caption: 'Info'
+    }
+  ];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

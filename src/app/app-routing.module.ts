@@ -13,10 +13,6 @@ const routes: Routes = [
   {
     path: 'items',
     loadChildren: './items/items.module#ItemsModule'
-  },
-  {
-    path: 'item',
-    loadChildren: './item/item.module#ItemModule'
   }
 ];
 

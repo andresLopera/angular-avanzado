@@ -21,7 +21,13 @@ ng g c base/items/items-container/items-list
 ng g m base/items/item --routing true
 ng g c base/items/item/item-container
 ng g c base/items/item/item-container/item-view
-ng g m reactive/contacts --routing true
-ng g c reactive/contacts/contacts-container
-ng g c reactive/contacts/contacts-container/contacts-new
-ng g c reactive/contacts/contacts-container/contacts-list
+ng g m 8-reactive/contacts --routing true
+ng g c 8-reactive/contacts/contacts-container
+ng g c 8-reactive/contacts/contacts-container/contacts-new
+ng g c 8-reactive/contacts/contacts-container/contacts-list
+ng g m 9-change/change --routing true
+ng g c 9-change/change/change-container
+ng g m a-redux/redux-rxjs --routing true
+ng g c a-redux/redux-rxjs/rxjs
+ng g m a-redux/redux-rxjs/redux-ngrx --routing true
+ng g c a-redux/redux-ngrx/items-container

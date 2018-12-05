@@ -13,5 +13,10 @@
     "url":"9-change",
     "title":"9-Change",
     "description": "Change detection experiments"
+  },
+  {
+    "url":"a-redux",
+    "title":"A-Redux",
+    "description": "Redux with RxJS and NgRx"
   }
 ]

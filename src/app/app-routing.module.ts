@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: '9-change',
     loadChildren: './9-change/change.module#ChangeModule'
+  },
+  {
+    path: 'a-redux',
+    loadChildren: './a-redux/redux-rxjs/redux-rxjs.module#ReduxRxjsModule'
   }
 ];
 

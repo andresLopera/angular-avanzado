@@ -16,7 +16,8 @@ const routes: Routes = [
   },
   {
     path: '8-reactive',
-    loadChildren: './8-reactive/contacts/contacts.module#ContactsModule'
+    loadChildren:
+      './tutorial/8-reactive/contacts/contacts.module#ContactsModule'
   },
   {
     path: '9-change',
@@ -28,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'b-pwa',
-    loadChildren: './b-pwa/b-pwa.module#BPwaModuleModule'
+    loadChildren: './b-pwa/b-pwa.module#BPwaModule'
   }
 ];
 

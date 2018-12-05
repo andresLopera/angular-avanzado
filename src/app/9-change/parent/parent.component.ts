@@ -12,10 +12,10 @@ import {
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class ParentComponent implements OnInit, OnDestroy {
+  public changingMethod = 0;
   public counter = 0;
   public item = { name: '', value: 0 };
   private interval;
-  private changingMethod = 0;
   constructor() {}
 
   ngOnInit() {

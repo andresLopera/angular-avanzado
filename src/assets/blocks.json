@@ -18,5 +18,10 @@
     "url":"a-redux",
     "title":"A-Redux",
     "description": "Redux with RxJS and NgRx"
+  },
+  {
+    "url":"b-pwa",
+    "title":"B-PWA",
+    "description": "Pregressive Web Applications"
   }
 ]

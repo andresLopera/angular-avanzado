@@ -35,3 +35,5 @@ ng g c a-redux/redux-ngrx/redux-ngrx/items-container
 ng add @angular/pwa
 npm install -g ngx-pwa-icons
 ngx-pwa-icons
+ng g m b-pwa --routing true
+ng g c b-pwa/pwa-container

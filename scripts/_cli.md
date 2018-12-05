@@ -28,6 +28,10 @@ ng g c 8-reactive/contacts/contacts-container/contacts-list
 ng g m 9-change/change --routing true
 ng g c 9-change/change/change-container
 ng g m a-redux/redux-rxjs --routing true
-ng g c a-redux/redux-rxjs/rxjs
+ng g c a-redux/redux-rxjs/counter
+ng g c a-redux/redux-rxjs/recounter
 ng g m a-redux/redux-rxjs/redux-ngrx --routing true
-ng g c a-redux/redux-ngrx/items-container
+ng g c a-redux/redux-ngrx/redux-ngrx/items-container
+ng add @angular/pwa
+npm install -g ngx-pwa-icons
+ngx-pwa-icons

@@ -1,7 +1,7 @@
 export interface GlobalState {
-  callsCounter: number;
+  message: string;
 }
 
 export const GLOBAL_INITIAL_STATE: GlobalState = {
-  callsCounter: 0
+  message: ''
 };

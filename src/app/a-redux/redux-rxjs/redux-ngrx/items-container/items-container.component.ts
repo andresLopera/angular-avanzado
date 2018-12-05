@@ -14,7 +14,7 @@ export class ItemsContainerComponent implements OnInit {
   constructor(private store: Store<RootState>) {}
 
   ngOnInit() {
-    this.store.dispatch(new GetAll());
     this.itemsRedux$ = this.store.select('items', 'items');
+    this.store.dispatch(new GetAll());
   }
 }

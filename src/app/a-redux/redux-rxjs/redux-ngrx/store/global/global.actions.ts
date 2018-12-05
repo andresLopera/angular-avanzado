@@ -1,12 +1,12 @@
 import { Action } from '@ngrx/store';
 
 export enum GlobalActionTypes {
-  IncrementCallsCounter = '[HttpService] Increment Calls Counter'
+  ShowMessage = '[Global] Show Message'
 }
 
-export class IncrementCallsCounter implements Action {
-  readonly type = GlobalActionTypes.IncrementCallsCounter;
-  constructor() {}
+export class ShowMessage implements Action {
+  readonly type = GlobalActionTypes.ShowMessage;
+  constructor(public readonly payload: string) {}
 }
 
-export type GlobalActions = IncrementCallsCounter;
+export type GlobalActions = ShowMessage;

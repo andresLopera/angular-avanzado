@@ -7,15 +7,19 @@ import { Subject } from 'rxjs';
   styles: []
 })
 export class ContactsContainerComponent implements OnInit {
-  public items$: Subject<any[]> = new Subject();
   public item = {};
+  public items$: Subject<any[]> = new Subject();
   private items = [];
   constructor() {}
 
   public ngOnInit() {}
 
   public onSave(newItem) {
-    this.items.push({ ...newItem, _id: this.items.length + 1 });
+    if (newItem._id === null) {
+      this.items.push({ ...newItem, _id: this.items.length });
+    } else {
+      this.items[newItem._id] = { ...newItem };
+    }
     this.items$.next(this.items);
   }
 }

@@ -40,6 +40,13 @@
     <span>Clear</span>
   </button>
 </form>
-<pre>
-  {{ form.value | json }}
-</pre>
+
+<aside class="row">
+  <pre class="col-md-5">
+    {{ form.value | json }}
+  </pre>
+  <pre class="col-md-5">
+    {{ form.status | json }}
+    {{ form.touched | json }}
+  </pre>
+</aside>

@@ -19,7 +19,13 @@ import {
   styles: []
 })
 export class ContactsNewComponent implements OnInit, OnChanges {
-  @Input() public item = { name: '', birthDate: null, email: '', phone: '' };
+  @Input() public item = {
+    _id: null,
+    name: '',
+    birthDate: null,
+    email: '',
+    phone: ''
+  };
   @Output() public save = new EventEmitter<any>();
   public form: FormGroup;
 
@@ -27,6 +33,7 @@ export class ContactsNewComponent implements OnInit, OnChanges {
 
   public ngOnInit(): void {
     this.form = this.fb.group({
+      _id: this.item._id,
       name: [this.item.name, Validators.required],
       birthDate: [
         this.formatBirthDate(this.item.birthDate),
@@ -63,10 +70,10 @@ export class ContactsNewComponent implements OnInit, OnChanges {
 
   private ValidBirthDate(control: AbstractControl) {
     const birthDate = Date.parse(control.value);
-    if (birthDate) {
+    if (birthDate && !isNaN(birthDate)) {
       const today = new Date().getTime();
       const age = (today - birthDate) / (1000 * 60 * 60 * 24 * 365);
-      if (age > 18 || age < 100) {
+      if (age >= 18 && age <= 100) {
         return null;
       }
     }

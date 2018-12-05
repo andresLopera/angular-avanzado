@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../../../../environments/environment';
 import { ItemsContainerComponent } from './items-container/items-container.component';
 import { ReduxNgrxRoutingModule } from './redux-ngrx-routing.module';
 import { ItemsEffects } from './store/items/items.effects';

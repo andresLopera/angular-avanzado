@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'a-redux',
-    loadChildren: './a-redux/redux-rxjs/redux-rxjs.module#ReduxRxjsModule'
+    loadChildren:
+      './tutorial/a-redux/redux-rxjs/redux-rxjs.module#ReduxRxjsModule'
   },
   {
     path: 'b-pwa',

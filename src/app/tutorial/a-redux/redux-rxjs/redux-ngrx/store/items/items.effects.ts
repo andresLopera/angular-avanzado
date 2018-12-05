@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { ItemsApiService } from '../../../../../core/items-api.service';
+import { ItemsApiService } from '../../../../../../core/items-api.service';
 import { GetAllError, GetAllOk, ItemActionTypes } from './items.actions';
 
 @Injectable()

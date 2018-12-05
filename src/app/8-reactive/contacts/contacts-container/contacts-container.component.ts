@@ -8,6 +8,7 @@ import { Subject } from 'rxjs';
 })
 export class ContactsContainerComponent implements OnInit {
   public items$: Subject<any[]> = new Subject();
+  public item = {};
   private items = [];
   constructor() {}
 

@@ -1,5 +1,7 @@
 <h2>
   8 - Reactive Forms samples
 </h2>
-<app-contacts-new (save)="onSave($event)"></app-contacts-new>
-<app-contacts-list [items]="items$ | async"></app-contacts-list>
+<app-contacts-new [item]="item"
+                  (save)="onSave($event)"></app-contacts-new>
+<app-contacts-list [items]="items$ | async"
+                   (edit)="item=$event"></app-contacts-list>

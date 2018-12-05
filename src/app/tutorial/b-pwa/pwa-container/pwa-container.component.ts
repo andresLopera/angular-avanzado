@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate, UpdateAvailableEvent } from '@angular/service-worker';
+import { Observable } from 'rxjs';
+import { ItemsApiService } from '../../../core/items-api.service';
 
 @Component({
   selector: 'app-pwa-container',
@@ -7,9 +9,18 @@ import { SwUpdate, UpdateAvailableEvent } from '@angular/service-worker';
   styles: []
 })
 export class PwaContainerComponent implements OnInit {
-  constructor(private swUpdate: SwUpdate) {}
+  public items$: Observable<any[]>;
+  constructor(
+    private swUpdate: SwUpdate,
+    private itemsApiService: ItemsApiService
+  ) {}
 
   ngOnInit() {
+    this.onUpdates();
+    this.items$ = this.itemsApiService.getAll();
+  }
+
+  private onUpdates() {
     this.swUpdate.available.subscribe((event: UpdateAvailableEvent) => {
       const appData = event.available.appData;
       const versionMessage = appData

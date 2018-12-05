@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -10,11 +15,11 @@ export class ParentComponent implements OnInit, OnDestroy {
   public counter = 0;
   public item = { name: '', value: 0 };
   private interval;
-
+  private changingMethod = 0;
   constructor() {}
 
   ngOnInit() {
-    this.interval = setInterval(() => this.change(), 5000);
+    this.interval = setInterval(() => this.change(), 3000);
   }
 
   public onClick() {
@@ -22,9 +27,19 @@ export class ParentComponent implements OnInit, OnDestroy {
   }
 
   private change() {
-    // this.changeRef();
-    // this.changeValue();
-    this.changeClone();
+    switch (this.changingMethod) {
+      case 0:
+        this.changeRef();
+        break;
+      case 1:
+        this.changeValue();
+        break;
+      case 2:
+        this.changeClone();
+        break;
+      default:
+        break;
+    }
   }
 
   private changeRef() {

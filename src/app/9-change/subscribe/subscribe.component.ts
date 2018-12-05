@@ -10,7 +10,7 @@ import { ItemsApiService } from '../../core/items-api.service';
   selector: 'app-subscribe',
   templateUrl: './subscribe.component.html',
   styleUrls: ['./subscribe.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class SubscribeComponent implements OnInit {
   public items: any[];
@@ -22,7 +22,8 @@ export class SubscribeComponent implements OnInit {
   ngOnInit() {
     this.itemsApiService.getAll().subscribe(data => {
       this.items = data;
-      this.cdr.detectChanges();
+      console.log('items', this.items);
+      // this.cdr.detectChanges();
     });
   }
 }

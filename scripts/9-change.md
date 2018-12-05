@@ -3,15 +3,11 @@
 ## 1.2 OnPush
 
 # 2 - family
-## 2.1 Default
-### 2.1.1 ref
-### 2.1.1 val
-### 2.1.1 clone
+## 2.1 Default/Default
+## 2.2 Onpush/Default
+## 2.3 Default/Onpush
+## 2.4 Onpush/Onpush
 
-## 2.2 Onpush
-### 2.2.1 ref
-### 2.2.1 val
-### 2.2.1 clone
 
 # 3 - subscribe 
 ## 3.1 Default

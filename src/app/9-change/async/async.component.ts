@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { ItemsApiService } from '../../core/items-api.service';
 
 @Component({
@@ -13,6 +14,8 @@ export class AsyncComponent implements OnInit {
   constructor(private itemsApiService: ItemsApiService) {}
 
   ngOnInit() {
-    this.items$ = this.itemsApiService.getAll();
+    this.items$ = this.itemsApiService
+      .getAll()
+      .pipe(tap(items => console.log('items', items)));
   }
 }

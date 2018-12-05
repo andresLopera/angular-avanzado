@@ -20,12 +20,12 @@ const routes: Routes = [
         component: ParentComponent
       },
       {
-        path: 'async',
-        component: AsyncComponent
-      },
-      {
         path: 'subscribe',
         component: SubscribeComponent
+      },
+      {
+        path: 'async',
+        component: AsyncComponent
       }
     ]
   }

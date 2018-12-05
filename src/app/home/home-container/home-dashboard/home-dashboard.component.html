@@ -1,12 +1,13 @@
 <h1>
-  Angular Advanced Labs
+  Angular Blocks Laboratory
 </h1>
-<a [routerLink]="['../items']"
-   routerLinkActive="router-link-active"
-   class="button">Items CRUD</a>
-<a [routerLink]="['.']"
-   routerLinkActive="router-link-active"
-   class="button">Reactive Forms</a>
-<a [routerLink]="['/change']"
-   routerLinkActive="router-link-active"
-   class="button">Change Detection</a>
+<section class="row">
+  <article *ngFor="let block of blocks"
+           class="card">
+    <p>
+      <a [routerLink]="[block.url]"
+         routerLinkActive="router-link-active">{{ block.title }}</a>
+    </p>
+    <p>{{ block.description }}</p>
+  </article>
+</section>

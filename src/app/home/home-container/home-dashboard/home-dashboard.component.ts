@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-dashboard',
@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class HomeDashboardComponent implements OnInit {
+  @Input() blocks: any[];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

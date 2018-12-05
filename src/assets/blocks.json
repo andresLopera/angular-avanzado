@@ -1,0 +1,17 @@
+[
+  {
+    "url":"items",
+    "title":"base",
+    "description": "Basic Items CRUD"
+  },
+  {
+    "url":"8-reactive",
+    "title":"8-reactive",
+    "description": "Contact manager with Reactive Forms"
+  },
+  {
+    "url":"9-change",
+    "title":"9-Change",
+    "description": "Change detection experiments"
+  }
+]

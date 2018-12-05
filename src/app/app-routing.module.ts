@@ -15,12 +15,12 @@ const routes: Routes = [
     loadChildren: './base/items/items.module#ItemsModule'
   },
   {
-    path: 'change',
-    loadChildren: './change/change.module#ChangeModule'
+    path: '8-reactive',
+    loadChildren: './8-reactive/contacts/contacts.module#ContactsModule'
   },
   {
-    path: 'contacts',
-    loadChildren: './reactive/contacts/contacts.module#ContactsModule'
+    path: '9-change',
+    loadChildren: './9-change/change.module#ChangeModule'
   }
 ];
 

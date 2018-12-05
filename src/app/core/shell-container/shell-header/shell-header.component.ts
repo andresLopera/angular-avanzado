@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ShellHeaderComponent implements OnInit {
   @Input() public title = 'Angular Blocks';
+  @Input() blocks: any[];
   constructor() {}
 
   ngOnInit() {}

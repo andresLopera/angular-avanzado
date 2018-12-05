@@ -9,23 +9,25 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
 const routes: Routes = [
   {
     path: '',
-    component: ChangeContainerComponent
-  },
-  {
-    path: 'detector',
-    component: DetectorComponent
-  },
-  {
-    path: 'family',
-    component: ParentComponent
-  },
-  {
-    path: 'async',
-    component: AsyncComponent
-  },
-  {
-    path: 'subscribe',
-    component: SubscribeComponent
+    component: ChangeContainerComponent,
+    children: [
+      {
+        path: 'detector',
+        component: DetectorComponent
+      },
+      {
+        path: 'family',
+        component: ParentComponent
+      },
+      {
+        path: 'async',
+        component: AsyncComponent
+      },
+      {
+        path: 'subscribe',
+        component: SubscribeComponent
+      }
+    ]
   }
 ];
 

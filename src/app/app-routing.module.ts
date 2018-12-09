@@ -36,6 +36,10 @@ const routes: Routes = [
     path: 'c-universal',
     loadChildren:
       './tutorial/c-universal/commerce/commerce.module#CommerceModule'
+  },
+  {
+    path: 'd-i18n',
+    loadChildren: './tutorial/d-i18n/stocks/stocks.module#StocksModule'
   }
 ];
 

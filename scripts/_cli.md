@@ -35,7 +35,9 @@ ng g c tutorial/a-redux/redux-ngrx/redux-ngrx/items-container
 ng add @angular/pwa
 npm install -g ngx-pwa-icons
 ngx-pwa-icons
-ng g m tutorial/b-pwa/local --routing true
+ng g m tutorial/b-pwa/local --routing=true
 ng g c tutorial/b-pwa/local/pwa-container
 ng g m tutorial/c-universal/commerce --routing true
 ng g c tutorial/c-universal/commerce/commerce-container
+ng g m tutorial/d-i18n/stocks --routing=true
+ng g c tutorial/d-i18n/stocks/stocks-container

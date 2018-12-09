@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'b-pwa',
-    loadChildren: './tutorial/b-pwa/b-pwa.module#BPwaModule'
+    loadChildren: './tutorial/b-pwa/local/local.module#LocalModule'
   }
 ];
 

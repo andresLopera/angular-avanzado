@@ -12,7 +12,7 @@
   {
     "url":"9-change",
     "title":"9-Change",
-    "description": "Change detection experiments"
+    "description": "Counters with change detection"
   },
   {
     "url":"a-redux",

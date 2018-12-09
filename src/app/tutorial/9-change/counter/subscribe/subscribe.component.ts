@@ -4,7 +4,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import { ItemsApiService } from '../../../core/items-api.service';
+import { ItemsApiService } from '../../../../core/items-api.service';
 
 @Component({
   selector: 'app-subscribe',

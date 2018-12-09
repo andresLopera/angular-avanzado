@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AsyncComponent } from './async/async.component';
-import { ChangeRoutingModule } from './change-routing.module';
+import { ChangeContainerComponent } from './change-container/change-container.component';
+import { CounterRoutingModule } from './counter-routing.module';
 import { DetectorComponent } from './detector/detector.component';
 import { ChildComponent } from './parent/child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
-import { ChangeContainerComponent } from './change-container/change-container.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,6 @@ import { ChangeContainerComponent } from './change-container/change-container.co
     SubscribeComponent,
     ChangeContainerComponent
   ],
-  imports: [CommonModule, ChangeRoutingModule]
+  imports: [CommonModule, CounterRoutingModule]
 })
-export class ChangeModule {}
+export class CounterModule {}

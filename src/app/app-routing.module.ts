@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: '9-change',
-    loadChildren: './tutorial/9-change/change.module#ChangeModule'
+    loadChildren: './tutorial/9-change/counter/counter.module#CounterModule'
   },
   {
     path: 'a-redux',

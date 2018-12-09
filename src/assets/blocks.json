@@ -23,5 +23,10 @@
     "url":"b-pwa",
     "title":"B-PWA",
     "description": "Local data with Progressive Web Applications"
+  },
+  {
+    "url":"c-universal",
+    "title":"C-UNIVERSAL",
+    "description": "Universal SEO e-commerce"
   }
 ]

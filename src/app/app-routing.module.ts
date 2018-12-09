@@ -31,6 +31,11 @@ const routes: Routes = [
   {
     path: 'b-pwa',
     loadChildren: './tutorial/b-pwa/local/local.module#LocalModule'
+  },
+  {
+    path: 'c-universal',
+    loadChildren:
+      './tutorial/c-universal/commerce/commerce.module#CommerceModule'
   }
 ];
 

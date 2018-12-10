@@ -7,13 +7,15 @@ import { ShellContainerComponent } from './shell-container/shell-container.compo
 import { ShellFooterComponent } from './shell-container/shell-footer/shell-footer.component';
 import { ShellHeaderComponent } from './shell-container/shell-header/shell-header.component';
 import { ShellMainComponent } from './shell-container/shell-main/shell-main.component';
+import { ShellMessengerComponent } from './shell-container/shell-messenger/shell-messenger.component';
 
 @NgModule({
   declarations: [
     ShellContainerComponent,
     ShellHeaderComponent,
     ShellFooterComponent,
-    ShellMainComponent
+    ShellMainComponent,
+    ShellMessengerComponent
   ],
   imports: [CommonModule, RouterModule, HttpClientModule],
   providers: [

@@ -11,6 +11,7 @@ ng g c core/shell-container --export
 ng g c core/shell-container/shell-header
 ng g c core/shell-container/shell-footer
 ng g c core/shell-container/shell-main
+ng g c core/shell-container/shell-messenger
 ng g s core/items-api
 ng g m shared
 npm install mini.css --save

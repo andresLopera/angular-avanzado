@@ -1,5 +1,6 @@
 {
   "name": "angular-blocks",
+  "description": "Tutorial Angular Avanzado Plexus",
   "version": "7.1.0",
   "scripts": {
     "ng": "ng",

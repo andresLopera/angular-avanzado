@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve -o --port 4271",
     "build": "ng build --prod --base-href /dist/angular-blocks/ ",
+    "serve": "http-server ./dist/browser/ -c-1 -o -p8071",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

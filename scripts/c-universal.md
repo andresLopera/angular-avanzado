@@ -1,7 +1,7 @@
 # c - Velocidad y SEO con el SSR de Angular Universal
 
 ## 1. instalación
-ng add @nguniversal/express-engine
+ng add @nguniversal/express-engine --clientProject=angular-blocks
 npm i @types/express --save-dev
 
 ### 1.1 scripts

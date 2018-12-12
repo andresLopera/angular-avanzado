@@ -7,10 +7,12 @@ import { MathService } from './math.service';
     <h3>Math Operations</h3>
     <form>
       <div>
-        <label>Number 1</label> <input type="number" [(ngModel)]="number1" />
+        <label>Number 1</label>
+        <input type="number" [(ngModel)]="number1" name="number1" />
       </div>
       <div>
-        <label>Number 2</label> <input type="number" [(ngModel)]="number2" />
+        <label>Number 2</label>
+        <input type="number" [(ngModel)]="number2" name="number2" />
       </div>
       <div><input type="button" value="Sum" (click)="onSumClick()" /></div>
       <div><label>Result: </label> {{ result }}</div>

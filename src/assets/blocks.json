@@ -33,5 +33,10 @@
     "url": "d-i18n",
     "title": "D-I18N",
     "description": "Stocks international"
+  },
+  {
+    "url": "e-library",
+    "title": "E_LIBRARY",
+    "description": "Math Library"
   }
 ]

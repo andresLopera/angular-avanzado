@@ -14,7 +14,12 @@ UniversalService
 ## 3. Otros
 server.ts NgModuleFactoryLoader
 app.server.module.ts ModuleMapLoaderModule ServerTransferStateModule
-
+{
+  provide: NgModuleFactoryLoader,
+  useClass: ModuleMapNgFactoryLoader,
+  deps: [Compiler, MODULE_MAP]
+}
+absolute url
 ## 4 SEO
 title
 meta

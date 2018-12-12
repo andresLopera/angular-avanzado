@@ -5,7 +5,6 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --port 4271",
-    "start:es": "ng serve --configuration=es -o --port 4272",
     "build": "ng build --prod --base-href /dist/angular-blocks/ ",
     "test": "ng test",
     "lint": "ng lint",
@@ -14,7 +13,10 @@
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run angular-blocks:server:production",
-    "universal": "npm run build:ssr && npm run serve:ssr"
+    "universal": "npm run build:ssr && npm run serve:ssr",
+    "start:es": "ng serve --configuration=es -o --port 4272",
+    "build:math": "ng build math",
+    "pack:math": "npm run build:math && cd dist/math && npm pack"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +39,7 @@
     "@nguniversal/module-map-ngfactory-loader": "v7.0.2",
     "core-js": "^2.5.4",
     "express": "^4.15.2",
+    "math": "file:dist/math/math-0.0.1.tgz",
     "mini.css": "^3.0.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

@@ -1,19 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MathService } from './math.service';
 
 @Component({
   selector: 'lib-math',
   template: `
-    <p>
-      math works!
-    </p>
+    <h3>Math Operations</h3>
+    <form>
+      <div>
+        <label>Number 1</label> <input type="number" [(ngModel)]="number1" />
+      </div>
+      <div>
+        <label>Number 2</label> <input type="number" [(ngModel)]="number2" />
+      </div>
+      <div><input type="button" value="Sum" (click)="onSumClick()" /></div>
+      <div><label>Result: </label> {{ result }}</div>
+    </form>
   `,
   styles: []
 })
 export class MathComponent implements OnInit {
+  @Input()
+  public number1 = 0;
+  @Input()
+  public number2 = 0;
 
-  constructor() { }
+  public result = 0;
 
-  ngOnInit() {
+  constructor(private mathService: MathService) {}
+
+  ngOnInit() {}
+
+  public onSumClick() {
+    this.result = this.mathService.sum(this.number1, this.number2);
   }
-
 }

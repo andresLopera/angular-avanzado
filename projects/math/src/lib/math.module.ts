@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MathComponent } from './math.component';
 
 @NgModule({
   declarations: [MathComponent],
-  imports: [
-  ],
+  imports: [FormsModule],
   exports: [MathComponent]
 })
-export class MathModule { }
+export class MathModule {}

@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --port 4271",
+    "start:es": "ng serve --configuration=es -o --port 4272",
     "build": "ng build --prod --base-href /dist/angular-blocks/ ",
     "test": "ng test",
     "lint": "ng lint",

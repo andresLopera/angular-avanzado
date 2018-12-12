@@ -53,6 +53,34 @@
             "scripts": []
           },
           "configurations": {
+            "es": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.es.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/index.es.html"
+                }
+              ],
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "serviceWorker": false,
+              "outputPath": "dist/AngularBase-es/",
+              "baseHref": "/dist/angularbase-es/",
+              "i18nFile": "src/locale/messages.es.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "es",
+              "i18nMissingTranslation": "error"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -86,6 +114,9 @@
             "browserTarget": "angular-blocks:build"
           },
           "configurations": {
+            "es": {
+              "browserTarget": "angular-blocks:build:es"
+            },
             "production": {
               "browserTarget": "angular-blocks:build:production"
             }

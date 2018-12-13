@@ -7,7 +7,8 @@ export const environment = {
   apiUrl: 'https://api-base.herokuapp.com/api/',
   assetsUrl: './assets/',
   buy: 'comprar',
-  sell: 'vender'
+  sell: 'vender',
+  isServerSide: false
 };
 
 /*

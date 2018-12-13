@@ -3,5 +3,6 @@ export const environment = {
   apiUrl: 'https://api-base.herokuapp.com/api/',
   assetsUrl: 'http://localhost:4072/assets/',
   buy: 'buy',
-  sell: 'sell'
+  sell: 'sell',
+  isServerSide: false
 };

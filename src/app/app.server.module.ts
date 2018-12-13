@@ -4,6 +4,7 @@ import {
   ServerTransferStateModule
 } from '@angular/platform-server';
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 
@@ -16,4 +17,8 @@ import { AppModule } from './app.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppServerModule {}
+export class AppServerModule {
+  constructor() {
+    environment.isServerSide = true;
+  }
+}

@@ -4,7 +4,8 @@ import {
   Input,
   OnChanges,
   OnInit,
-  Output
+  Output,
+  SimpleChanges
 } from '@angular/core';
 import {
   AbstractControl,
@@ -47,8 +48,15 @@ export class ContactsNewComponent implements OnInit, OnChanges {
     });
   }
 
-  public ngOnChanges(change) {
-    this.patchValue();
+  public ngOnChanges(changes: SimpleChanges) {
+    if (changes['item']) {
+      this.patchValue();
+    }
+  }
+
+  public showError(controlName: string) {
+    const control = this.form.get(controlName);
+    return control.invalid && control.touched;
   }
 
   public onSaveClick() {

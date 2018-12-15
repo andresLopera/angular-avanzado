@@ -14,7 +14,7 @@ export class GlobalService {
     return this.message$.asObservable();
   }
 
-  public setMessage(message) {
+  public setMessage(message: string) {
     this.message = message;
     this.message$.next(message);
     setTimeout(() => {

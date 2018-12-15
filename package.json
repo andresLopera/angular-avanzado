@@ -1,6 +1,6 @@
 {
   "name": "angular-blocks",
-  "description": "Tutorial Angular Avanzado Plexus",
+  "description": "Tutorial Angular",
   "version": "7.1.0",
   "scripts": {
     "build:client-and-server-bundles": "ng build --prod && ng run angular-blocks:server:production",

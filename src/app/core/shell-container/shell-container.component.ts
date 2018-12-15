@@ -16,7 +16,7 @@ export class ShellContainerComponent implements OnInit {
     private blocksService: BlocksService
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.globalService.setMessage('Initializing...');
     this.blocks$ = this.blocksService.getBlocks$();
     this.message$ = this.globalService.getMessage$();

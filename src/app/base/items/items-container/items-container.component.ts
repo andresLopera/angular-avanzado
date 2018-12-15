@@ -16,7 +16,7 @@ export class ItemsContainerComponent implements OnInit {
     this.items$ = this.itemsApiService.getAll();
   }
 
-  public onSave(newItem) {
+  public onSave(newItem: any) {
     this.items$ = this.itemsApiService
       .post(newItem)
       .pipe(switchMap(() => this.itemsApiService.getAll()));

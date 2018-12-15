@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { ItemsApiService } from '../../../../core/items-api.service';
 
 @Component({
@@ -19,7 +19,8 @@ export class ItemContainerComponent implements OnInit {
 
   public ngOnInit() {
     this.item$ = this.route.params.pipe(
-      switchMap(params => this.itemsApiService.getById(params['id']))
+      map(params => params['id']),
+      switchMap(paramId => this.itemsApiService.getById(paramId))
     );
   }
 

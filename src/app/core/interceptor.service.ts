@@ -13,7 +13,7 @@ import { GlobalService } from './global.service';
 export class InterceptorService implements HttpInterceptor {
   constructor(private globalService: GlobalService) {}
 
-  intercept(
+  public intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {

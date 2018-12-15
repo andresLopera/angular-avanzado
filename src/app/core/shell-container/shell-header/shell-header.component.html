@@ -1,7 +1,6 @@
 <header class="sticky">
   <a [routerLink]="['/']"
      class="logo"><span class="icon-home"></span>{{ title }}</a>
-
   <a *ngFor="let block of blocks"
      [routerLink]="[block.url]"
      routerLinkActive="router-link-active"

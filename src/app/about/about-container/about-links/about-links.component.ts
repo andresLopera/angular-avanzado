@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class AboutLinksComponent implements OnInit {
   public links = [
     {
-      href: 'https://academia-binaria.com/hola-angular-cli/',
+      href: 'https://academia-binaria.com/',
       caption: 'Tutorial en español'
     },
     {
-      href: 'https://github.com/AcademiaBinaria/autobot/',
+      href: 'https://github.com/AcademiaBinaria/',
       caption: 'GitHub Repository'
     },
     {

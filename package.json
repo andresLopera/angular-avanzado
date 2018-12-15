@@ -1,6 +1,12 @@
 {
   "name": "angular-blocks",
   "description": "Tutorial Angular",
+  "homepage": "https://academia-binaria.com",
+  "author": {
+    "name": "Alberto Basalo",
+    "email": "albertobasalo@agorabinaria.com",
+    "url": "https://twitter.com/albertobasalo"
+  },
   "version": "7.1.0",
   "scripts": {
     "build:client-and-server-bundles": "ng build --prod && ng run angular-blocks:server:production",

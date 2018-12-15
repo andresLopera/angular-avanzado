@@ -1,20 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../../../../environments/environment';
 import { ItemsContainerComponent } from './items-container/items-container.component';
-import { ReduxNgrxRoutingModule } from './redux-ngrx-routing.module';
-import { ItemsEffects } from './store/items/items.effects';
+import { NgRxRoutingModule } from './ngrx-routing.module';
 import { metaReducers, rootReducers } from './store/root';
+import { ItemsEffects } from './store/root/items/items.effects';
 
 @NgModule({
   declarations: [ItemsContainerComponent],
   imports: [
     CommonModule,
-    ReduxNgrxRoutingModule,
+    FormsModule,
+    NgRxRoutingModule,
     StoreModule.forRoot(rootReducers, { metaReducers }),
+    StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     StoreDevtoolsModule.instrument({
       maxAge: 100,
       logOnly: environment.production
@@ -22,4 +26,4 @@ import { metaReducers, rootReducers } from './store/root';
     EffectsModule.forRoot([ItemsEffects])
   ]
 })
-export class ReduxNgrxModule {}
+export class NgRxModule {}

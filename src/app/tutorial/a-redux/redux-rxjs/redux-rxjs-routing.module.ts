@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'ngrxitems',
-    loadChildren: './redux-ngrx/redux-ngrx.module#ReduxNgrxModule'
+    loadChildren: './ngrx/ngrx.module#NgRxModule'
   }
 ];
 

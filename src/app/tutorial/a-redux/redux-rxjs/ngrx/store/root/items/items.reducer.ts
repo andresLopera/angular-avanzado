@@ -10,27 +10,52 @@ export function itemsReducer(
     case ItemActionTypes.GetAll:
       result = {
         ...state,
-        items: [],
+        data: [],
         working: true,
-        completed: false,
+        completedOk: false,
         message: 'loading items...'
       };
       break;
     case ItemActionTypes.GetAllOk:
       result = {
         ...state,
-        items: action.payload,
+        data: action.payload,
         working: false,
-        completed: true,
+        completedOk: true,
         message: 'items loaded'
       };
       break;
     case ItemActionTypes.GetAllError:
       result = {
         ...state,
-        items: [],
+        data: [],
         working: false,
-        completed: false,
+        completedOk: false,
+        message: action.payload
+      };
+      break;
+    case ItemActionTypes.Post:
+      result = {
+        ...state,
+        working: true,
+        completedOk: false,
+        message: 'saving item...'
+      };
+      break;
+    case ItemActionTypes.PostOk:
+      result = {
+        ...state,
+        data: [...state.data, action.payload],
+        working: false,
+        completedOk: true,
+        message: 'item saved'
+      };
+      break;
+    case ItemActionTypes.PostError:
+      result = {
+        ...state,
+        working: false,
+        completedOk: false,
         message: action.payload
       };
       break;

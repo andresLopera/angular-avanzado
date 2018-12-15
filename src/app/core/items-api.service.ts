@@ -11,22 +11,22 @@ export class ItemsApiService {
   private url = environment.apiUrl + 'pub/items';
   constructor(private http: HttpClient, private globalService: GlobalService) {}
 
-  public post(newItem) {
+  public post$(newItem) {
     return this.http
       .post(this.url, newItem)
       .pipe(tap(res => this.globalService.setMessage('Saved')));
   }
-  public getAll() {
+  public getAll$() {
     return this.http
       .get<any[]>(this.url)
       .pipe(tap(res => this.globalService.setMessage('Got Items')));
   }
-  public getById(itemId) {
+  public getById$(itemId) {
     return this.http
       .get<any>(this.url + '/' + itemId)
       .pipe(tap(res => this.globalService.setMessage('Got Item')));
   }
-  public deleteById(itemId) {
+  public deleteById$(itemId) {
     return this.http
       .delete<any>(this.url + '/' + itemId)
       .pipe(tap(res => this.globalService.setMessage('Deleted')));

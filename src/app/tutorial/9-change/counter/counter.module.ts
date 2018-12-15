@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AsyncComponent } from './async/async.component';
+import { AsyncComponent } from './change-container/async/async.component';
 import { ChangeContainerComponent } from './change-container/change-container.component';
+import { DetectorComponent } from './change-container/detector/detector.component';
+import { ChildComponent } from './change-container/parent/child/child.component';
+import { ParentComponent } from './change-container/parent/parent.component';
+import { SubscribeComponent } from './change-container/subscribe/subscribe.component';
 import { CounterRoutingModule } from './counter-routing.module';
-import { DetectorComponent } from './detector/detector.component';
-import { ChildComponent } from './parent/child/child.component';
-import { ParentComponent } from './parent/parent.component';
-import { SubscribeComponent } from './subscribe/subscribe.component';
 
 @NgModule({
   declarations: [

@@ -4,13 +4,13 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import { ItemsApiService } from '../../../../core/items-api.service';
+import { ItemsApiService } from '../../../../../core/items-api.service';
 
 @Component({
   selector: 'app-subscribe',
   templateUrl: './subscribe.component.html',
   styleUrls: ['./subscribe.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class SubscribeComponent implements OnInit {
   public items: any[];
@@ -20,10 +20,10 @@ export class SubscribeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.itemsApiService.getAll().subscribe(data => {
+    this.itemsApiService.getAll$().subscribe(data => {
       this.items = data;
-      console.log('items', this.items);
-      this.cdr.detectChanges();
+      console.log('api.got.items', this.items);
+      // this.cdr.detectChanges();
     });
   }
 }

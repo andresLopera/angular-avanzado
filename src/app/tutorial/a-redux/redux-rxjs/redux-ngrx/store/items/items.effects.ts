@@ -36,7 +36,7 @@ export class ItemsEffects {
   public getItemsEffect$ = this.actions$.pipe(
     ofType(ItemActionTypes.GetAll),
     switchMap(getAllAction =>
-      this.itemsApiService.getAll().pipe(
+      this.itemsApiService.getAll$().pipe(
         map(items => {
           if (Array.isArray(items)) {
             return new GetAllOk(items);

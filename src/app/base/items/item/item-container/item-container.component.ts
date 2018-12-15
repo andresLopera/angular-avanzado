@@ -20,12 +20,12 @@ export class ItemContainerComponent implements OnInit {
   public ngOnInit() {
     this.item$ = this.route.params.pipe(
       map(params => params['id']),
-      switchMap(paramId => this.itemsApiService.getById(paramId))
+      switchMap(paramId => this.itemsApiService.getById$(paramId))
     );
   }
 
   public onDelete(item) {
-    const subs$ = this.itemsApiService.deleteById(item._id).subscribe(() => {
+    const subs$ = this.itemsApiService.deleteById$(item._id).subscribe(() => {
       subs$.unsubscribe();
       this.router.navigate(['../items']);
     });

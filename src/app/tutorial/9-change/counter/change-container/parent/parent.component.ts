@@ -46,14 +46,14 @@ export class ParentComponent implements OnInit, OnDestroy {
     this.counter++;
     this.item.name = 'ex: ' + this.counter.toExponential();
     this.item.value = this.counter;
-    console.log('changeRef', this.item);
+    console.log('parent.changeRef', this.item);
   }
 
   private changeValue() {
     const counter = this.item.value + 1;
     this.item.name = 'ex: ' + counter.toExponential();
     this.item.value = counter;
-    console.log('changeValue', this.item);
+    console.log('parent.changeValue', this.item);
   }
 
   private changeClone() {
@@ -61,7 +61,7 @@ export class ParentComponent implements OnInit, OnDestroy {
     this.item.name = 'ex: ' + counter.toExponential();
     this.item.value = counter;
     this.item = { ...this.item };
-    console.log('changeClone', this.item);
+    console.log('parent.changeClone', this.item);
   }
 
   public ngOnDestroy(): void {

@@ -20,7 +20,7 @@ export class PwaContainerComponent implements OnInit {
 
   ngOnInit() {
     this.onUpdates();
-    this.items$ = this.itemsApiService.getAll();
+    this.items$ = this.itemsApiService.getAll$();
     this.products$ = this.productsApiService.getProducts$();
   }
 

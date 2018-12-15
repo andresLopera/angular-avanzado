@@ -13,12 +13,12 @@ export class ItemsContainerComponent implements OnInit {
   constructor(private itemsApiService: ItemsApiService) {}
 
   public ngOnInit() {
-    this.items$ = this.itemsApiService.getAll();
+    this.items$ = this.itemsApiService.getAll$();
   }
 
   public onSave(newItem: any) {
     this.items$ = this.itemsApiService
-      .post(newItem)
-      .pipe(switchMap(() => this.itemsApiService.getAll()));
+      .post$(newItem)
+      .pipe(switchMap(() => this.itemsApiService.getAll$()));
   }
 }

@@ -11,7 +11,7 @@ import {
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class ChildComponent implements OnInit, OnChanges {
   @Input() public counter = 0;
@@ -23,7 +23,7 @@ export class ChildComponent implements OnInit, OnChanges {
     for (const propName in changes) {
       if (propName) {
         const change = changes[propName];
-        console.log(propName, JSON.stringify(change));
+        console.log('child.' + propName, JSON.stringify(change));
       }
     }
   }

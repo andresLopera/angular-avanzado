@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AsyncComponent } from './async/async.component';
+import { AsyncComponent } from './change-container/async/async.component';
 import { ChangeContainerComponent } from './change-container/change-container.component';
-import { DetectorComponent } from './detector/detector.component';
-import { ParentComponent } from './parent/parent.component';
-import { SubscribeComponent } from './subscribe/subscribe.component';
+import { DetectorComponent } from './change-container/detector/detector.component';
+import { ParentComponent } from './change-container/parent/parent.component';
+import { SubscribeComponent } from './change-container/subscribe/subscribe.component';
 
 const routes: Routes = [
   {

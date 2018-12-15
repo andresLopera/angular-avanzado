@@ -10,8 +10,8 @@ import {
   selector: 'app-detector',
   templateUrl: './detector.component.html',
   styleUrls: ['./detector.component.css'],
-  // changeDetection: ChangeDetectionStrategy.Default
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DetectorComponent implements OnInit, OnDestroy {
   public counter = 0;
@@ -37,7 +37,7 @@ export class DetectorComponent implements OnInit, OnDestroy {
     this.item.name = 'ex: ' + this.counter.toExponential();
     this.item.value = this.counter;
     // force change detection
-    this.ref.detectChanges();
+    // this.ref.detectChanges();
     console.log('change', this.item);
   }
 

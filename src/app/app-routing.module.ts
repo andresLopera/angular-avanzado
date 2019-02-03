@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: './base/items/items.module#ItemsModule'
   },
   {
+    path: 'rxjs',
+    loadChildren: './base/rxjs/rxjs.module#RxjsModule'
+  },
+  {
     path: '8-reactive',
     loadChildren:
       './tutorial/8-reactive/contacts/contacts.module#ContactsModule'

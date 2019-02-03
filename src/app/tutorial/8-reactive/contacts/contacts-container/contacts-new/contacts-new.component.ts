@@ -33,19 +33,7 @@ export class ContactsNewComponent implements OnInit, OnChanges {
   constructor(protected fb: FormBuilder) {}
 
   public ngOnInit(): void {
-    this.form = this.fb.group({
-      _id: this.item._id,
-      name: [this.item.name, Validators.required],
-      birthDate: [
-        this.formatBirthDate(this.item.birthDate),
-        [this.ValidBirthDate]
-      ],
-      email: this.item.email,
-      phone: [
-        this.item.phone,
-        [Validators.minLength(6), Validators.maxLength(12)]
-      ]
-    });
+    this.buildForm();
   }
 
   public ngOnChanges(changes: SimpleChanges) {
@@ -54,16 +42,32 @@ export class ContactsNewComponent implements OnInit, OnChanges {
     }
   }
 
-  public showError(controlName: string) {
-    const control = this.form.get(controlName);
-    return control.invalid && control.touched;
-  }
-
   public onSaveClick() {
     const newContact = { ...this.form.value };
     newContact.birthDate = this.parseBirthDate(newContact.birthDate);
     this.save.next(newContact);
     this.form.reset();
+  }
+
+  public showError(controlName: string) {
+    const control = this.form.get(controlName);
+    return control.invalid && control.touched;
+  }
+
+  private buildForm() {
+    this.form = this.fb.group({
+      _id: this.item._id,
+      name: [this.item.name, Validators.required],
+      birthDate: [
+        this.formatBirthDate(this.item.birthDate),
+        [this.validateBirthDate]
+      ],
+      email: this.item.email,
+      phone: [
+        this.item.phone,
+        [Validators.minLength(6), Validators.maxLength(12)]
+      ]
+    });
   }
 
   private patchValue() {
@@ -76,7 +80,7 @@ export class ContactsNewComponent implements OnInit, OnChanges {
     }
   }
 
-  private ValidBirthDate(control: AbstractControl) {
+  private validateBirthDate(control: AbstractControl) {
     const birthDate = Date.parse(control.value);
     if (birthDate && !isNaN(birthDate)) {
       const today = new Date().getTime();
@@ -89,16 +93,10 @@ export class ContactsNewComponent implements OnInit, OnChanges {
       birthDate: 'Date of birth invalid'
     };
   }
-  private formatBirthDate(value) {
-    const birthDate = new Date(value);
-    if (birthDate instanceof Date && !isNaN(birthDate.getDate())) {
-      return (
-        birthDate.getDate() +
-        '-' +
-        (birthDate.getMonth() + 1) +
-        '-' +
-        birthDate.getFullYear()
-      );
+  private formatBirthDate(birthDate: string | number | Date) {
+    const date = new Date(birthDate);
+    if (date instanceof Date && !isNaN(date.getDate())) {
+      return this.getDateFormated(date);
     } else {
       return '';
     }
@@ -110,4 +108,6 @@ export class ContactsNewComponent implements OnInit, OnChanges {
       return null;
     }
   }
+  private getDateFormated = (date: Date) =>
+    `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
 }

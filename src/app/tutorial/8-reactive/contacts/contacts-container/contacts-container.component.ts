@@ -14,12 +14,22 @@ export class ContactsContainerComponent implements OnInit {
 
   public ngOnInit() {}
 
-  public onSave(newItem) {
-    if (newItem._id === null) {
-      this.items.push({ ...newItem, _id: this.items.length });
+  public onSave(newItem: { _id: null | number }) {
+    if (this.isReallyNew(newItem)) {
+      this.insertNewItem(newItem);
     } else {
-      this.items[newItem._id] = { ...newItem };
+      this.updateCurrentItem(newItem);
     }
     this.items$.next(this.items);
+  }
+
+  private isReallyNew(newItem: { _id: null | number }) {
+    return newItem._id === null;
+  }
+  private updateCurrentItem(newItem: { _id?: number }) {
+    this.items[newItem._id] = { ...newItem };
+  }
+  private insertNewItem(newItem: { _id: number }) {
+    this.items.push({ ...newItem, _id: this.items.length });
   }
 }

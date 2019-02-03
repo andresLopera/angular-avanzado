@@ -24,6 +24,7 @@ export class SubscribeComponent implements OnInit {
       this.items = data;
       console.log('api.got.items', this.items);
       // this.cdr.detectChanges();
+      // console.log('detectChanges', this.items);
     });
   }
 }

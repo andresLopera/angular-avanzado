@@ -7,7 +7,13 @@ import { Subject } from 'rxjs';
   styles: []
 })
 export class ContactsContainerComponent implements OnInit {
-  public item = {};
+  public item = {
+    _id: null,
+    name: 'a',
+    birthDate: null,
+    email: '',
+    phone: 5
+  };
   public items$: Subject<any[]> = new Subject();
   private items = [];
   constructor() {}

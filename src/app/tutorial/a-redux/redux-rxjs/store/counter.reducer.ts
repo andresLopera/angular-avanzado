@@ -5,10 +5,10 @@ export function counterReducer(state: CounterState = INITIAL_COUNTER_STATE, acti
   const result = { ...state };
   switch (action.type) {
     case CounterActionTypes.Add:
-      result.value++;
+      result.value += action.payload;
       break;
     case CounterActionTypes.Substract:
-      result.value--;
+      result.value -= action.payload;
       break;
     default:
       break;

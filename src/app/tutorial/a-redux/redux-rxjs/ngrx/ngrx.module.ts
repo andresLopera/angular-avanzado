@@ -18,7 +18,7 @@ import { ItemsEffects } from './store/root/items/items.effects';
     FormsModule,
     NgRxRoutingModule,
     StoreModule.forRoot(rootReducers, { metaReducers }),
-    StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
+    StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 100,
       logOnly: environment.production

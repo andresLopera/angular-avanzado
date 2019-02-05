@@ -18,3 +18,7 @@ export const messageSelector = createSelector(
   featureSelector,
   (state: ItemsState) => state.message
 );
+export const completedOkSelector = createSelector(
+  featureSelector,
+  (state: ItemsState) => state.completedOk
+);

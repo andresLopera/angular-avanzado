@@ -20,13 +20,7 @@ import {
   styles: []
 })
 export class ContactsNewComponent implements OnInit, OnChanges {
-  @Input() public item = {
-    _id: null,
-    name: '',
-    birthDate: null,
-    email: '',
-    phone: ''
-  };
+  @Input() public item;
   @Output() public save = new EventEmitter<any>();
   public form: FormGroup;
 
@@ -55,19 +49,24 @@ export class ContactsNewComponent implements OnInit, OnChanges {
   }
 
   private buildForm() {
-    this.form = this.fb.group({
-      _id: this.item._id,
-      name: [this.item.name, Validators.required],
-      birthDate: [
-        this.formatBirthDate(this.item.birthDate),
-        [this.validateBirthDate]
-      ],
-      email: this.item.email,
-      phone: [
-        this.item.phone,
-        [Validators.minLength(6), Validators.maxLength(12)]
-      ]
-    });
+    const self = this;
+    console.log(self.item);
+    this.form = this.fb.group(
+      {
+        _id: this.item._id,
+        name: [this.item.name, Validators.required],
+        birthDate: [
+          this.formatBirthDate(this.item.birthDate),
+          [this.validateBirthDate]
+        ],
+        email: this.item.email,
+        phone: [
+          self.item.phone,
+          [Validators.minLength(6), Validators.maxLength(12)]
+        ]
+      },
+      []
+    );
   }
 
   private patchValue() {

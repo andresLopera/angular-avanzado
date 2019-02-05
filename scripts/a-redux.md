@@ -1,8 +1,14 @@
 # a - El estado de la aplicación con Redux y Angular
 
+https://academia-binaria.com/el-patron-redux-con-ngrx-en-angular/
+
 ## a.1 El patrón Redux
 
+https://drive.google.com/drive/folders/1DbT2bNV1jzXT7hPWwu9GX-mJWWQASc5D
+
 ## a.2 NgRx
+
+https://drive.google.com/drive/folders/1BemU4xFL4Rkz4TwEUZOO9RoHccNFK2FB
 
 ng add @ngrx/store
 
@@ -27,13 +33,13 @@ ng add @ngrx/store
  / global
   / actions
   / reducer
-  / state 
+  / state
 
 /global
 global.state.ts
 global.reducer.ts
 
-/ root 
+/ root
  / index.ts
  / root.state.ts
 

@@ -6,7 +6,7 @@ ng add @angular/pwa
 npm install -g ngx-pwa-icons
 
 ## b.2 Uso de servicios
-src\app\core\navigator\navigator.component.ts
+src\app\tutorial\b-pwa\local\pwa-container\pwa-container.component.ts
 
 ## b.3 Cache
 ngsw-config.json

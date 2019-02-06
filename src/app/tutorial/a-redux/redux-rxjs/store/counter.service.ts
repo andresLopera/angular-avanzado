@@ -16,6 +16,6 @@ export class CounterService {
   }
   public dispatch(command: CounterActions) {
     this.state = counterReducer(this.state, command);
-    this.state$.next(this.state);
+    this.state$.next({ ...this.state });
   }
 }

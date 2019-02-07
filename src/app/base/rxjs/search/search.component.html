@@ -1,0 +1,24 @@
+<div>
+  <h2>Launches Search</h2>
+  <input #source />
+  <br>
+  <span>
+    keys$:
+    <pre> {{ keys$ | async }} </pre>
+  </span>
+  <span>
+    debounce$:
+    <pre> {{ debounce$ | async }} </pre>
+  </span>
+  <span>
+    distinctUntilChanged$:
+    <pre> {{ distinct$ | async }} </pre>
+  </span>
+  <ul>
+    <li *ngFor="let launch of launches$ | async">{{launch.name}}</li>
+  </ul>
+  <!-- <span>
+    numberOfLaunches$:
+    <pre> {{ numberOfLaunches$ | async }} </pre>
+  </span> -->
+</div>

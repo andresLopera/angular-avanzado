@@ -15,6 +15,10 @@
     list$:
     <pre> {{ list$ | async }} </pre>
   </span>
+  <span>
+    <span #source>event$:</span>
+    <pre> {{ event$ | async | json }} </pre>
+  </span>
 </div>
 <h5>STREAMS</h5>
 <div class="row">
@@ -73,3 +77,6 @@
     <pre> {{ opPlus }} </pre>
   </span>
 </div>
+<br>
+<a [routerLink]="['search']"
+   routerLinkActive="router-link-active">RxSearch</a>

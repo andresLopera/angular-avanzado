@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BlocksService } from '../blocks.service';
 import { GlobalService } from '../global.service';
@@ -6,6 +6,7 @@ import { GlobalService } from '../global.service';
 @Component({
   selector: 'app-shell-container',
   templateUrl: './shell-container.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
   styles: []
 })
 export class ShellContainerComponent implements OnInit {

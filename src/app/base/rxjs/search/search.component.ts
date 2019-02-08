@@ -19,7 +19,7 @@ import {
 export class SearchComponent implements OnInit {
   @ViewChild('source') public source: ElementRef;
   public keys$: Observable<any>;
-  public debounce$: Observable<any>;
+  public relaxed$: Observable<any>;
   public distinct$: Observable<any>;
   public launches$: Observable<any[]>;
   public clickLaunches$: Observable<any[]>;
@@ -41,12 +41,12 @@ export class SearchComponent implements OnInit {
   }
 
   private getNewSearchTerms(el: any) {
-    this.keys$ = fromEvent(el, 'keyup').pipe(
-      map(() => el.value),
-      filter(text => text.length > 2)
+    this.keys$ = fromEvent(el, 'keyup').pipe(map(this.valueFromEvent));
+    this.relaxed$ = this.keys$.pipe(
+      filter(this.onlyLarge),
+      debounceTime(400)
     );
-    this.debounce$ = this.keys$.pipe(debounceTime(400));
-    this.distinct$ = this.debounce$.pipe(distinctUntilChanged());
+    this.distinct$ = this.relaxed$.pipe(distinctUntilChanged());
   }
 
   private searchTerm() {
@@ -55,18 +55,25 @@ export class SearchComponent implements OnInit {
 
   private getTermAndSearch(el: any) {
     this.launches$ = fromEvent(el, 'keyup').pipe(
-      map(() => el.value),
-      filter(text => text.length > 2),
+      map(this.valueFromEvent),
+      filter(this.onlyLarge),
       debounceTime(400),
       distinctUntilChanged(),
       switchMap(this.callGet)
     );
   }
 
+  private valueFromEvent = (event: any) => event.target.value;
+
+  private onlyLarge = (text: string) => text.length > 2;
+
   private callGet = (searchTerm: string) =>
-    this.http.get<any>(`${this.url}${searchTerm}${this.params}`).pipe(
+    this.http.get<any>(this.getUrl(searchTerm)).pipe(
       take(1),
       map(result => result.launches),
       catchError(() => of([]))
     );
+
+  private getUrl = (searchTerm: string) =>
+    `${this.url}${searchTerm}${this.params}`;
 }

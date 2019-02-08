@@ -14,11 +14,15 @@
     distinctUntilChanged$:
     <pre> {{ distinct$ | async }} </pre>
   </span>
-  <ul>
-    <li *ngFor="let launch of launches$ | async">{{launch.name}}</li>
-  </ul>
-  <!-- <span>
-    numberOfLaunches$:
-    <pre> {{ numberOfLaunches$ | async }} </pre>
-  </span> -->
+  <span>
+    launches$:
+    <pre> {{ (launches$ | async)?.length }} </pre>
+  </span>
+  <input type="button"
+         value="Search"
+         (click)="search(source.value)">
+  <span>
+    clickLaunches$:
+    <pre> {{ (clickLaunches$ | async)?.length }} </pre>
+  </span>
 </div>

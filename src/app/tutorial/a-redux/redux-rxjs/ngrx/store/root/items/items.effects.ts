@@ -7,7 +7,7 @@ import {
   GetAll,
   GetAllError,
   GetAllOk,
-  ItemActionTypes,
+  ItemsActionTypes,
   Post,
   PostError,
   PostOk
@@ -17,7 +17,7 @@ import {
 export class ItemsEffects {
   @Effect()
   public getItemsEffect$ = this.actions$.pipe(
-    ofType<GetAll>(ItemActionTypes.GetAll),
+    ofType<GetAll>(ItemsActionTypes.GetAll),
     switchMap(() =>
       this.itemsApiService.getAll$().pipe(
         map(items => (Array.isArray(items) ? items : [])),
@@ -29,7 +29,7 @@ export class ItemsEffects {
 
   @Effect()
   public postItemEffect$ = this.actions$.pipe(
-    ofType<Post>(ItemActionTypes.Post),
+    ofType<Post>(ItemsActionTypes.Post),
     switchMap(postAction =>
       this.itemsApiService.post$(postAction.payload).pipe(
         map(item => new PostOk(item)),

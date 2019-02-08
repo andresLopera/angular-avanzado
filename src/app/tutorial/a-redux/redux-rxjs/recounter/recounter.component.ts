@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Add, Substract } from '../store/counter.actions';
 import { CounterService } from '../store/counter.service';
+import { CounterState } from '../store/counter.state';
 
 @Component({
   selector: 'app-recounter',
@@ -8,12 +10,12 @@ import { CounterService } from '../store/counter.service';
   styleUrls: ['./recounter.component.css']
 })
 export class RecounterComponent implements OnInit {
-  public value = 0;
+  public value$: Observable<CounterState>;
 
   constructor(private counterService: CounterService) {}
 
   ngOnInit() {
-    this.counterService.select$().subscribe(data => (this.value = data.value));
+    this.value$ = this.counterService.select$();
   }
 
   onAddClick() {

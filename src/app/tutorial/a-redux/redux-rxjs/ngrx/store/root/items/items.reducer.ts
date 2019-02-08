@@ -1,13 +1,13 @@
-import { ItemActions, ItemActionTypes } from './items.actions';
+import { ItemsActions, ItemsActionTypes } from './items.actions';
 import { INITIAL_ITEMS_STATE, ItemsState } from './items.state';
 
 export function itemsReducer(
   state = INITIAL_ITEMS_STATE,
-  action: ItemActions
+  action: ItemsActions
 ): ItemsState {
   let result: ItemsState;
   switch (action.type) {
-    case ItemActionTypes.GetAll:
+    case ItemsActionTypes.GetAll:
       result = {
         ...state,
         data: [],
@@ -16,7 +16,7 @@ export function itemsReducer(
         message: 'loading items...'
       };
       break;
-    case ItemActionTypes.GetAllOk:
+    case ItemsActionTypes.GetAllOk:
       result = {
         ...state,
         data: action.payload,
@@ -25,7 +25,7 @@ export function itemsReducer(
         message: 'items loaded'
       };
       break;
-    case ItemActionTypes.GetAllError:
+    case ItemsActionTypes.GetAllError:
       result = {
         ...state,
         data: [],
@@ -34,7 +34,7 @@ export function itemsReducer(
         message: action.payload
       };
       break;
-    case ItemActionTypes.Post:
+    case ItemsActionTypes.Post:
       result = {
         ...state,
         working: true,
@@ -42,7 +42,7 @@ export function itemsReducer(
         message: 'saving item...'
       };
       break;
-    case ItemActionTypes.PostOk:
+    case ItemsActionTypes.PostOk:
       result = {
         ...state,
         data: [...state.data, action.payload],
@@ -51,7 +51,7 @@ export function itemsReducer(
         message: 'item saved'
       };
       break;
-    case ItemActionTypes.PostError:
+    case ItemsActionTypes.PostError:
       result = {
         ...state,
         working: false,

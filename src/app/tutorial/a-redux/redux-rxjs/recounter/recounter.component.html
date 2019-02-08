@@ -3,7 +3,7 @@
 </h3>
 <div>
   counter:
-  <span> {{ value }} </span>
+  <span> {{ value$ | async | json }} </span>
 </div>
 <div>
   <button (click)="onAddClick()">Add</button>

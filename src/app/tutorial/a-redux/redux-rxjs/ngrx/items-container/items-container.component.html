@@ -2,7 +2,7 @@
   a - NGRX items Manager
 </h3>
 <pre>
-  {{ itemsRedux$ | async | json }}
+  <a *ngFor="let item of itemsRedux$ | async" [routerLink]="[item._id]">{{ item | json}}</a>
 </pre>
 <h5>
   Create a new item

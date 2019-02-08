@@ -1,0 +1,30 @@
+<div>
+  <h2>Launches Search</h2>
+  <input #source />
+  <br>
+  <span>
+    keys$:
+    <pre> {{ keys$ | async }} </pre>
+  </span>
+  <span>
+    relaxed$:
+    <pre> {{ relaxed$ | async }} </pre>
+  </span>
+  <span>
+    distinctUntilChanged$:
+    <pre> {{ distinct$ | async }} </pre>
+  </span>
+  <span>
+    launches$:
+    <pre> {{ (launches$ | async)?.length }} </pre>
+  </span>
+  <input type="button"
+         value="Search"
+         (click)="search(source.value)">
+  <span>
+    clickLaunches$:
+    <pre> {{ (clickLaunches$ | async)?.length }} </pre>
+  </span>
+</div>
+<a [routerLink]="['../maps']"
+   routerLinkActive="router-link-active">Go to Maps</a>

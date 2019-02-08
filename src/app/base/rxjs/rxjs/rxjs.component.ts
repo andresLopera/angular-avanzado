@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
   AsyncSubject,
   BehaviorSubject,
   from,
+  fromEvent,
   Observable,
   of,
   ReplaySubject,
@@ -16,9 +17,12 @@ import { filter, map, skip, takeWhile, tap } from 'rxjs/operators';
   styles: []
 })
 export class RxjsComponent implements OnInit {
+  @ViewChild('source') source: ElementRef;
+
   public value$: Observable<number>;
   public stream$: Observable<any>;
   public list$: Observable<string[]>;
+  public event$: Observable<number>;
 
   public subject$: Subject<number> = new Subject();
   public behaviorSubject$: BehaviorSubject<number> = new BehaviorSubject(0);
@@ -49,6 +53,7 @@ export class RxjsComponent implements OnInit {
     this.value$ = of(new Date().getMilliseconds());
     this.stream$ = from([1, 'two', '***']);
     this.list$ = of(['N', 'S', 'E', 'W']);
+    this.event$ = fromEvent(this.source.nativeElement, 'click');
   }
 
   private emitValues() {

@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: ItemsContainerComponent
+  },
+  {
+    path: ':id',
+    loadChildren: './item-view/item-view.module#ItemViewModule'
   }
 ];
 

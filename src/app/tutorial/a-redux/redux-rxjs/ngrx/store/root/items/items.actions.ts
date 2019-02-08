@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-export enum ItemActionTypes {
+export enum ItemsActionTypes {
   GetAll = '[ItemsApiService] Get All Command',
   GetAllOk = '[ItemsApiService] Get All OK Event',
   GetAllError = '[ItemsApiService] Get All Error Event',
@@ -10,36 +10,36 @@ export enum ItemActionTypes {
 }
 
 export class GetAll implements Action {
-  readonly type = ItemActionTypes.GetAll;
+  readonly type = ItemsActionTypes.GetAll;
   constructor() {}
 }
 
 export class GetAllOk implements Action {
-  readonly type = ItemActionTypes.GetAllOk;
+  readonly type = ItemsActionTypes.GetAllOk;
   constructor(public readonly payload: any[]) {}
 }
 
 export class GetAllError implements Action {
-  readonly type = ItemActionTypes.GetAllError;
+  readonly type = ItemsActionTypes.GetAllError;
   constructor(public readonly payload: string) {}
 }
 
 export class Post implements Action {
-  readonly type = ItemActionTypes.Post;
+  readonly type = ItemsActionTypes.Post;
   constructor(public readonly payload: any) {}
 }
 
 export class PostOk implements Action {
-  readonly type = ItemActionTypes.PostOk;
+  readonly type = ItemsActionTypes.PostOk;
   constructor(public readonly payload: any) {}
 }
 
 export class PostError implements Action {
-  readonly type = ItemActionTypes.PostError;
+  readonly type = ItemsActionTypes.PostError;
   constructor(public readonly payload: string) {}
 }
 
-export type ItemActions =
+export type ItemsActions =
   | GetAll
   | GetAllOk
   | GetAllError

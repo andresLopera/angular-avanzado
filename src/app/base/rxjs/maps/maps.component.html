@@ -1,0 +1,27 @@
+<div>
+  <h2>Maps </h2>
+  <span>
+    frameworks$:
+    <pre> {{ frameworks$ | async }} </pre>
+  </span>
+  <span>
+    unflat$: Returns an observable :-(
+    <pre> {{ unflat$ | async  }} </pre>
+  </span>
+  <span>
+    mergeMap$: We get outdated devs
+    <pre> {{ mergeMap$ | async | json }} </pre>
+  </span>
+  <span>
+    switchMap$: We get modern devs
+    <pre> {{ switchMap$ | async | json }} </pre>
+  </span>
+  <span>
+    concatMap$: We wait for modern devs until current ends
+    <pre> {{ concatMap$ | async | json }} </pre>
+  </span>
+  <span>
+    exhaustMap$: we only get the modern if dont have none
+    <pre> {{ exhaustMap$ | async | json }} </pre>
+  </span>
+</div>

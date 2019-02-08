@@ -5,6 +5,7 @@ import {
   catchError,
   debounceTime,
   distinctUntilChanged,
+  filter,
   map,
   switchMap,
   take
@@ -40,7 +41,10 @@ export class SearchComponent implements OnInit {
   }
 
   private getNewSearchTerms(el: any) {
-    this.keys$ = fromEvent(el, 'keyup').pipe(map(() => el.value));
+    this.keys$ = fromEvent(el, 'keyup').pipe(
+      map(() => el.value),
+      filter(text => text.length > 2)
+    );
     this.debounce$ = this.keys$.pipe(debounceTime(400));
     this.distinct$ = this.debounce$.pipe(distinctUntilChanged());
   }
@@ -52,6 +56,7 @@ export class SearchComponent implements OnInit {
   private getTermAndSearch(el: any) {
     this.launches$ = fromEvent(el, 'keyup').pipe(
       map(() => el.value),
+      filter(text => text.length > 2),
       debounceTime(400),
       distinctUntilChanged(),
       switchMap(this.callGet)
